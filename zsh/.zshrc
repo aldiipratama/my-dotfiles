@@ -29,19 +29,19 @@ if [[ -d /usr/share/nvm ]]; then
   source /usr/share/nvm/init-nvm.sh
 fi
 
-if [[ command -v git ]]; then
+if command -v git >/dev/null; then
   alias dotgit="/usr/bin/git --git-dir=$HOME/Documents/projects/dotfiles/ --work-tree=$HOME"
 fi
 
-if [[ command -v lazygit ]]; then
+if command -v lazygit >/dev/null; then
   alias lazydot='lazygit --git-dir=/home/aldipratama/Documents/projects/dotfiles/ --work-tree=/home/aldipratama'
 fi
 
-if [[ command -v bat ]]; then
+if command -v bat >/dev/null; then
   alias cat="bat --theme=base256"
 fi
 
-if [[ command -v eza ]]; then
+if command -v eza >/dev/null; then
   alias ls='eza --icons=always --color=always'
   alias lt='eza --icons=always --color=always -TF'
   alias la='eza --icons=always --color=always -a'
