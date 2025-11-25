@@ -1,11 +1,16 @@
 #!/bin/zsh
 
-if [[ -d "$HOME/.oh-my-zsh" || -d /usr/share/oh-my-zsh ]]; then
+if [[ -d "$HOME/.oh-my-zsh" ]]; then
   ZSH="$HOME/.oh-my-zsh"
 
   ZSH_THEME="headline"
 
-  plugins=(git)
+  plugins=(
+    git
+    zsh-autosuggestions
+    zsh-syntax-highlighting
+    zsh-history-substring-search
+  )
 
   ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
   if [[ ! -d $ZSH_CACHE_DIR ]]; then
@@ -22,12 +27,6 @@ fi
 
 if [[ -d /usr/share/nvm ]]; then
   source /usr/share/nvm/init-nvm.sh
-fi
-
-if [[ -d "$HOME/.zsh" ]]; then
-  source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-  source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-  source ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
 fi
 
 if [[ command -v git ]]; then
